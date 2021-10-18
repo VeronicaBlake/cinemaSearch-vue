@@ -2,7 +2,7 @@
   <div class="containter">
     <div class="row">
       <div class="col-md-3">
-        <div class="row">
+        <!-- <div class="row">
           <div class="input-group">
             <div class="form-outline">
               <input type="search" id="form1" class="form-control" />
@@ -12,7 +12,7 @@
               <i class="fas fa-search"></i>
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-6">
         Here's where the active movie stuff goes
