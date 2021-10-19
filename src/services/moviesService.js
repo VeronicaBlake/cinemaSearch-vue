@@ -3,7 +3,7 @@ import { api } from './AxiosService'
 
 class MoviesService {
   async getAll() {
-    const res = await api.get('https://6wh65vbmy7.execute-api.us-west-2.amazonaws.com/test/movies')
+    const res = await api.get('api/movies')
     AppState.movies = res.data
   }
 }

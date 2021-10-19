@@ -25,14 +25,29 @@
 </template>
 
 <script>
-// set up the axios endpoint
-// set up the appstate?
-// search two criteria
-// have a space where the search list is
-// space for active movie
-// space for movies in related genres
+import { computed, onMounted, reactive } from '@vue/runtime-core'
+import Pop from '../utils/Pop'
+import { logger } from '../utils/Logger'
+import { moviesService } from '../services/MoviesService'
+import { AppState } from '../AppState'
 export default {
-  name: 'Home'
+  setup() {
+    const state = reactive({
+      movies: computed(() => AppState.movies)
+    })
+    onMounted(async() => {
+      try {
+        await moviesService.get()
+      } catch (error) {
+        Pop.toast('Unable to get all movies', error)
+        logger.log(error)
+      }
+    })
+    return {
+      state,
+      movies: computed(() => AppState.movies)
+    }
+  }
 }
 </script>
 
